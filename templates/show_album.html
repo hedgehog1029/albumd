@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <div class="left">
+        <img src="/{{ album.artist|urlencode }}/{{ album.name|urlencode }}/cover.jpg"/>
+    </div>
+    <div class="right">
+        <h3>{{ album.artist }} - {{ album.name }}</h3>
+        <a href="{{ album.name }}.m3u">Play Album (m3u)</a>
+        <a href="{{ album.name }}.zip">Download Zip</a>
+        {% set tracks = album.sorted_tracks() %}
+        {% include "parts/tracks.html" %}
+    </div>
+{% endblock %}

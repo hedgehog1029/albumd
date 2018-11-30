@@ -1,0 +1,15 @@
+<html lang="en">
+    <head>
+        <title>obw's album collection | {{ breadcrumb }}</title>
+        <link rel="stylesheet" href="/static/global.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <h1>obw's music collection</h1>
+            <h3 class="breadcrumb">{{ breadcrumb|breadcrumbize }}</h3>
+        </div>
+        <div class="page">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

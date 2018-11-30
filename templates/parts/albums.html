@@ -1,0 +1,9 @@
+<div class="albums collage">
+    {% for album in albums %}
+        <div class="album">
+            <a href="/{{ album.artist|urlencode }}/{{ album.name|urlencode }}">
+                <img src="/{{ album.artist|urlencode }}/{{ album.name|urlencode }}/cover.jpg"/>
+            </a>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,47 @@
+html {
+    background: #111;
+    color: #fff;
+}
+
+body {
+    font-family: "Fantasque Sans Mono", monospace;
+}
+
+a {
+    color: #2277ed;
+}
+
+.collage {
+
+}
+
+.collage > div {
+    display: inline-block;
+    width: 256px;
+    height: 256px;
+    margin: 0 10px 10px 0;
+    transition: transform .25s;
+}
+
+.collage > div img {
+    width: 100%;
+    height: 100%;
+}
+
+.collage > div:hover {
+    transform: scale(1.03, 1.03);
+}
+
+.left {
+    float: left;
+}
+
+.left img {
+    width: 256px;
+    height: 256px;
+}
+
+.right {
+    display: inline-block;
+    margin-left: 10px;
+}

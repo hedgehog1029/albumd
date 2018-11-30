@@ -1,0 +1,9 @@
+<div class="tracks">
+    <ol>
+        {% for track in tracks %}
+            <li class="track">
+                <a href="/{{ track.artist }}/{{ track.album }}/{{ track.name }}.mp3">{{ track.name }}</a>
+            </li>
+        {% endfor %}
+    </ol>
+</div>

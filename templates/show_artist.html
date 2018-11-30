@@ -1,0 +1,7 @@
+{% extends "template.html" %}
+
+{% block content %}
+    <h2>Albums</h2>
+    {% set albums = artist.albums.values() %}
+    {% include "parts/albums.html" %}
+{% endblock %}
