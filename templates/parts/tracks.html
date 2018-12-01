@@ -2,7 +2,7 @@
     <ol>
         {% for track in tracks %}
             <li class="track">
-                <a href="/{{ track.artist }}/{{ track.album }}/{{ track.name }}.mp3">{{ track.name }}</a>
+                <a href="/{{ [track.artist, track.album,  track.name]|join('/')|urlencode }}.mp3">{{ track.name }}</a>
             </li>
         {% endfor %}
     </ol>

@@ -1,7 +1,8 @@
-from flask import Flask, render_template, send_file, url_for
+from flask import Flask, render_template, send_file
 from jinja2 import Markup
 from scanner import MusicScanner
 from io import BytesIO
+from urllib.parse import quote
 
 import os
 
@@ -20,7 +21,7 @@ def breadcrumb(val: str):
     stack = ""
 
     for part in val.split("/"):
-        stack = stack + part + "/"
+        stack = stack + quote(part) + "/"
 
         if part == "":
             parts.append(f'<a href="/"><-</a>')
