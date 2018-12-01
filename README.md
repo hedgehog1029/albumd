@@ -2,12 +2,6 @@
 
 Web service that generates a nice view of your music collection.
 
-## Screenshots
-
-![Index page](https://i.witch.press/GAXtqf9n.png)
-
-![Album view](https://i.witch.press/HbBl8qfz.png)
-
 ## Features
 
 * Homepage displays a nice collage of your albums
@@ -15,6 +9,12 @@ Web service that generates a nice view of your music collection.
 * View all albums under a particular artist
 * Download zip file containing all songs in an album
 * Generates m3u playlists for streaming (Works with VLC, Audacious can be a little picky)
+
+## Screenshots
+
+![Index page](https://i.witch.press/GAXtqf9n.png)
+
+![Album view](https://i.witch.press/6ybPHloa.png)
 
 ## Setup
 
