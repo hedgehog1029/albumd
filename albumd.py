@@ -10,6 +10,7 @@ scanner = MusicScanner()
 
 app.jinja_env.trim_blocks = True
 
+hostname = os.getenv("SERVER_NAME")
 music_dir = os.getenv("XDG_MUSIC_DIR")
 scanner.scan_dir(music_dir)
 
@@ -48,7 +49,7 @@ def show_album(artist: str, album: str):
 def gen_playlist(artist: str, album: str):
     album_info = scanner.artists[artist].albums[album]
 
-    return album_info.generate_m3u("http://localhost:5000"), 200, {
+    return album_info.generate_m3u(hostname), 200, {
         "Content-Disposition": f"attachment; filename=\"{artist}-{album}.m3u\"",
         "Content-Type": "audio/x-mpegurl"
     }
@@ -71,10 +72,6 @@ def get_cover(artist: str, album: str):
         io = BytesIO(album_cover.data)
 
     return send_file(io, mimetype=album_cover.mime)
-
-# @app.route("/<string:artist>/<string:album>/<string:track>")
-# def show_track(artist: str, album: str, track: str):
-#     pass
 
 @app.route("/<string:artist>/<string:album>/<path:track>.mp3")
 def stream_track(artist: str, album: str, track: str):
